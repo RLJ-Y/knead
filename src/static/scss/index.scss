@@ -50,6 +50,10 @@ input {
   align-items: center;
   justify-content: center;
 }
+.column-center-a {
+  display: flex;
+  flex-direction: column;
+}
 // 省略号
 .textElis {
   width: 100%;
