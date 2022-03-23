@@ -41,12 +41,21 @@
 			</view>
 		</view>
 		<image src='../../static/images/my/pic-share.png'></image>
-		<view class='recommend'></view>
+		<view class='recommend'>
+			<view class='row-center'>
+				<image src='../../static/images/my/pic-gift.png'></image>
+				<text></text>
+			</view>
+			<view class="list column-center">
+				<technician></technician>
+			</view>
+		</view>
 		<tabbar/>
 	</view>
 </template>
 
 <script>
+
 </script>
 
 <style lang="scss" scoped>

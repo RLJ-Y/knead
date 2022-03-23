@@ -15,11 +15,11 @@
 				<text>已服务：830单</text>
 			</view>
 			<view class="txt3 row-start">
-				<image src="../../../static/images/therapist/ic-ShopOutlined.png" class="icon" />
+				<image src="../../static/images/therapist/ic-ShopOutlined.png" class="icon" />
 				商家
-				<image src="../../../static/images/therapist/ic-daipj.png" class="icon mgl20" />
+				<image src="../../static/images/therapist/ic-daipj.png" class="icon mgl20" />
 				3212
-				<image class="icon2 mgl20" src="../../../static/images/therapist/ai-xin.png" />
+				<image class="icon2 mgl20" src="../../static/images/therapist/ai-xin.png" />
 				3730
 			</view>
 		</view>
@@ -37,7 +37,7 @@
 <script></script>
 
 <style lang="scss" scoped>
-@import '../../../static/scss/index.scss';
+@import '../../static/scss/index.scss';
 .content {
 	width: 710rpx;
 	height: 190rpx;

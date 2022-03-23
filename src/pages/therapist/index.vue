@@ -5,12 +5,7 @@
 			<view class="search"><u-search v-model="value1" :show-action="false" placeholder="请输入理疗师姓名" @change="change"></u-search></view>
 		</view>
 		<view class="list column-center">
-			<Item />
-			<Item />
-			<Item />
-			<Item />
-			<Item />
-			<Item />
+			<technician></technician>
 		</view>
 		<u-picker :show="show" :columns="columns" @change="changeHandler"></u-picker>
 		<tabbar/>
@@ -18,7 +13,6 @@
 </template>
 
 <script>
-import Item from './item/index.vue';
 export default {
 	data() {
 		return {
@@ -26,9 +20,6 @@ export default {
 			value1: '',
 			show: false
 		};
-	},
-	components: {
-		Item
 	},
 	methods: {
 		change(e) {
