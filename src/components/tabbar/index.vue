@@ -16,13 +16,13 @@ export default {
 				{
 					iconPath: 'photo',
 					selectedIconPath: 'photo-fill',
-					text: '放映厅',
+					text: '理疗师',
 					customIcon: false
 				},
 				{
 					iconPath: 'play-right',
 					selectedIconPath: 'play-right-fill',
-					text: '直播',
+					text: '订单',
 					customIcon: false
 				},
 				{
@@ -43,6 +43,8 @@ export default {
 				this.$router.replace('home');
 			} else if (e === 1) {
 				this.$router.replace('therapist');
+			} else if (e === 2) {
+				this.$router.replace('order');
 			} else if (e === 3) {
 				this.$router.replace('my');
 			}
