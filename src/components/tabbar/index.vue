@@ -1,5 +1,5 @@
 <template>
-	<u-tabbar v-model="current" :list="list" ></u-tabbar>
+	<u-tabbar v-model="current" :list="list" @change='change' ></u-tabbar>
 </template>
 
 <script>
@@ -38,14 +38,14 @@ export default {
 	},
 	methods: {
 		change(e) {
-			// console.log(e);
-			// if (e === 0) {
-			// 	this.$router.replace('home');
-			// } else if (e === 1) {
-			// 	this.$router.replace('therapist');
-			// } else if (e === 3) {
-			// 	this.$router.replace('my');
-			// }
+			console.log(e);
+			if (e === 0) {
+				this.$router.replace('home');
+			} else if (e === 1) {
+				this.$router.replace('therapist');
+			} else if (e === 3) {
+				this.$router.replace('my');
+			}
 		}
 	}
 };
