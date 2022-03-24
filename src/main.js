@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App'
-import uView from 'uview-ui'
+import uView from "uview-ui";
 import router from './router'
 import Tabbar from './components/tabbar/index.vue'
 import Technician from './components/technician/index.vue'
@@ -13,7 +13,7 @@ Vue.config.productionTip = false
 Vue.config.productionTip = false
 App.mpType = 'app'
 
-Vue.use(uView)
+Vue.use(uView);
 const app = new Vue({
   ...App,
   router

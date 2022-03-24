@@ -48,7 +48,7 @@ export default {
 @import '../../static/scss/index.scss';
 .main{
 	padding-bottom: 120rpx;
-	
+	font-size: 30rpx;
 	.swiper {
 		width: 100%;
 		height: 350rpx;

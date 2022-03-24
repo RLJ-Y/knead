@@ -1,9 +1,20 @@
 // router/modules/home.js
-const therapist = [
+const my = [
    {
-       path:'/therapist',
-       name:'therapist',
-       component:() => import('@/pages/therapist/index.vue'),
+       path:'/my',
+       name:'my',
+       component:() => import('@/pages/my/index'),
    },
+   {
+       path:'/address',
+       name:'address',
+       component:() => import('@/pages/my/address'),
+   },
+   {
+       path:'/addSite',
+       name:'addSite',
+       component:() => import('@/pages/my/address/addSite'),
+   }
+   
 ]
-export default therapist
+export default my

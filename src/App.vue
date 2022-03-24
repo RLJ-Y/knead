@@ -18,8 +18,9 @@ export default {
 </script>
 
 <style lang="scss">
-@import './static/scss/index.scss';
 @import "uview-ui/index.scss";
+@import './static/scss/index.scss';
+
 
 /*每个页面公共css */
 page {

@@ -9,12 +9,15 @@
 						<view class='vip'>普通会员</view>
 					</view>
 				</view>
-				<image src='../../static/images/my/ic-setup.png' class='icon'></image>
+				<image src='@/static/images/my/ic-setup.png' class='icon'></image>
 			</view>
-			<!-- <view>
-				<view></view>
-				<view>立即充值</view>
-			</view> -->
+			<view class='money row-between'>
+				<view class='num column-center-a'>
+					<text class='txt1'>账户余额(元)</text>
+					<text class='txt2'>0.00</text>
+				</view>
+				<view class='btn'>立即充值</view>
+			</view>
 		</view>
 		<view class='row-between collection'>
 			<view class='item column-center'>
@@ -30,23 +33,23 @@
 			<view class='title'>其他功能</view>
 			<view class='row-start'>
 				<view class='item column-center'>
-					<image src='../../static/images/my/pic-kefu.png'></image>
+					<image src='@/static/images/my/pic-kefu.png'></image>
 					<text>联系客服</text>
 				</view>
 				<view class='item column-center'>
-					<image src='../../static/images/my/pic-diz.png'></image>
+					<image src='@/static/images/my/pic-diz.png'></image>
 					<text>地址管理</text>
 				</view>
 				<view class='item column-center'>
-					<image src='../../static/images/my/pic-zhaomu.png'></image>
+					<image src='@/static/images/my/pic-zhaomu.png'></image>
 					<text>技师招募</text>
 				</view>
 			</view>
 		</view>
-		<!-- <image src='../../static/images/my/pic-share.png' class='share-img'></image> -->
+		<image src='@/static/images/my/pic-share.png' class='share-img'></image>
 		<view class='recommend'>
 			<view class='row-center title'>
-				<image src='../../static/images/my/pic-gift.png'></image>
+				<image src='@/static/images/my/pic-gift.png'></image>
 				<text>为您推荐</text>
 			</view>
 			<view class="list column-center">
@@ -64,16 +67,18 @@
 </script>
 
 <style lang="scss" scoped>
-@import '../../static/scss/index.scss';
+@import '@/static/scss/index.scss';
 .main{
 	padding-bottom: 110rpx;
+	font-size: 30rpx;
 	.top{
 		width:100%;
 		height:480rpx;
-		background:url(../../static/images/my/pic-bc.png);
+		background:url(@/static/images/my/pic-bc.png);
 		background-size: 100% 100%;
 		padding:120rpx 30rpx 0;
 		margin-bottom: 20rpx;
+		position: relative;
 		.info{
 			.left{	
 				.imgbox{
@@ -112,6 +117,35 @@
 				height:56rpx
 			}
 		}
+		.money{
+			width:690rpx;
+			height:180rpx;
+			background:url(@/static/images/my/pic-car.png);
+			background-size: 100% 100%;
+			position: absolute;
+			left:30rpx;
+			bottom:0;
+			padding:0 30rpx;
+			.txt1{
+				color:#5A4129;
+			}
+			.txt2{
+				color:#775737;
+				font-size:56rpx;
+				font-weight: bold;
+			}
+			.btn{
+				text-align: center;
+				color: #775737;
+				font-weight: bold;
+				font-size: 32rpx;
+				width: 230rpx;
+				height: 70rpx;
+				line-height: 70rpx;
+				background: #D9BB85;
+				border-radius: 35rpx;
+			}
+		}
 	}
 	
 	.collection{
@@ -124,7 +158,7 @@
 		.item{
 			width:312rpx;
 			height:140rpx;
-			background:url(../../static/images/my/pic-background.png);
+			background:url(@/static/images/my/pic-background.png);
 			background-size: 100% 100%;
 			color:#fff;
 			.txt2{
@@ -139,12 +173,13 @@
 		padding:40rpx 30rpx;
 		box-shadow: 0px 0px 8rpx 0px rgba(218, 218, 218, 0.5);
 		border-radius: 12rpx;
+		margin-bottom: 20rpx;
 		.title{
 			font-size: 32rpx;
 			margin-bottom: 30rpx;
 		}
 		.item{
-			width:100rpx;
+			width:120rpx;
 			margin-right: 90rpx;
 			image{
 				width:90rpx;
@@ -156,6 +191,10 @@
 				font-size: 26rpx;
 			}
 		}
+	}
+	.share-img{
+		width:710rpx;
+		height: 150rpx;
 	}
 	.recommend{
 		.title{

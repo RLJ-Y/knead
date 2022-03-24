@@ -7,7 +7,8 @@
 		<view class="list column-center">
 			<technician></technician>
 		</view>
-		<u-picker :show="show" :columns="columns" @change="changeHandler"></u-picker>
+		<u-picker mode="selector" v-model="show"  :default-selector="[0]" :range="selector"></u-picker>
+
 		<tabbar/>
 	</view>
 </template>
@@ -16,9 +17,9 @@
 export default {
 	data() {
 		return {
-			columns: [['中国', '美国', '日本']],
 			value1: '',
-			show: false
+			show: false,
+			selector: ['中国', '美国', '日本'],
 		};
 	},
 	methods: {
@@ -33,6 +34,7 @@ export default {
 @import '../../static/scss/index.scss';
 .main {
 	padding-bottom: 120rpx;
+	font-size: 30rpx;
 	.nav {
 		padding: 20rpx 30rpx;
 		background: #fff;

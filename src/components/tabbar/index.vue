@@ -1,32 +1,54 @@
 <template>
-	<u-tabbar  :fixed="true"  :placeholder="false"  :safeAreaInsetBottom="false" @change="change" >
-		<u-tabbar-item text="首页">
-		</u-tabbar-item>
-		<u-tabbar-item text="理疗师">
-		</u-tabbar-item>
-		<u-tabbar-item text="订单">
-		</u-tabbar-item>
-		<u-tabbar-item text="我的">
-		</u-tabbar-item>
-	</u-tabbar>
+	<u-tabbar v-model="current" :list="list" ></u-tabbar>
 </template>
 
 <script>
-	export default{
-		methods:{
-			change(e){
-				console.log(e)
-				if(e===0){
-					this.$router.replace('home')
-				}else if(e===1){
-					this.$router.replace('therapist')
-				}else if(e===3){
-					this.$router.replace('my')
+export default {
+	data() {
+		return {
+			list: [
+				{
+					iconPath: 'home',
+					selectedIconPath: 'home-fill',
+					text: '首页',
+					customIcon: false
+				},
+				{
+					iconPath: 'photo',
+					selectedIconPath: 'photo-fill',
+					text: '放映厅',
+					customIcon: false
+				},
+				{
+					iconPath: 'play-right',
+					selectedIconPath: 'play-right-fill',
+					text: '直播',
+					customIcon: false
+				},
+				{
+					iconPath: 'account',
+					selectedIconPath: 'account-fill',
+					text: '我的',
+					isDot: false,
+					customIcon: false
 				}
-			}
+			],
+			current: 0
+		};
+	},
+	methods: {
+		change(e) {
+			// console.log(e);
+			// if (e === 0) {
+			// 	this.$router.replace('home');
+			// } else if (e === 1) {
+			// 	this.$router.replace('therapist');
+			// } else if (e === 3) {
+			// 	this.$router.replace('my');
+			// }
 		}
 	}
+};
 </script>
 
-<style>
-</style>
+<style></style>

@@ -8,7 +8,7 @@
 			"style": {
 				"navigationBarTitleText": "uni-app"
 			}
-		}
+		}	
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
