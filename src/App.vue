@@ -1,7 +1,5 @@
 <template>
-	<view style="height:100%">	
-		<router-view></router-view>
-	</view>
+	<router-view></router-view>
 </template>
 <script>
 export default {

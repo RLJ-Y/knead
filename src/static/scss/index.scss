@@ -98,11 +98,17 @@ input {
 .mgl10 {
 	margin-left: 10rpx;
 }
+.mgb10 {
+	margin-bottom: 10rpx;
+}
 .mgb20 {
 	margin-bottom: 20rpx;
 }
 .mgb30 {
 	margin-bottom: 30rpx;
+}
+.mgb40{
+	margin-bottom: 40rpx;
 }
 .mgr10 {
 	margin-right: 10rpx;
@@ -147,4 +153,7 @@ input {
 	border-radius: 12rpx;
 	font-size: 36rpx;
 	font-weight: bold;
+}
+.wrap{
+	flex-wrap: wrap;
 }

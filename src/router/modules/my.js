@@ -14,7 +14,13 @@ const my = [
        path:'/addSite',
        name:'addSite',
        component:() => import('@/pages/my/address/addSite'),
-   }
+   },
+   {
+       path:'/vouchers',
+       name:'vouchers',
+       component:() => import('@/pages/my/vouchers/index'),
+   },
+   
    
 ]
 export default my
