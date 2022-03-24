@@ -25,13 +25,19 @@
 					<!-- 订单列表 -->
 					<view 
 						v-for="(item,index) in tabItem.orderList" :key="index"
-						class="item"
+						class="item row-between"
 					>
-						<view class='lf'>
-							<view></view>
-							<view></view>
+						<view class='lf column-center'>
+							<view class='money'>￥10.00</view>
+							<view class='tip'>现金券x3</view>
 						</view>
-						<view></view>
+						<view class='right'>
+							<view class='row-between mgb30'>
+								<view class='conditions'>满198.00可用</view>
+								<view class='btn'>立即使用</view>
+							</view>
+							<view class='tip'>有效期至2022.04.30  23:59:00</view>
+						</view>
 					</view>
 					
 					<uni-load-more :status="tabItem.loadingType"></uni-load-more>
@@ -224,48 +230,56 @@
 	.list-scroll-content{
 		height: 100%;
 	}
-	.order-item{
+	.item{
 		width: 710rpx;
-		padding:30rpx;
+		height:206rpx;
 		margin:0 20rpx 20rpx;
-		background: #FFFFFF;
-		box-shadow: 0px 0px 8rpx 0px rgba(218, 218, 218, 0.5);
-		border-radius: 12rpx;
-		border: 2px solid $greenColor;
+		background: url(../../../static/images/my/pic-money.png);
+		background-size: 100% 100%;
 		font-size:28rpx;
-		.btn{
-			text-align: center;
-			color:$greenColor;
-			font-size: 32rpx;
-			width:180rpx;
-			height: 64rpx;
-			line-height: 60rpx;
-			border:2rpx solid $greenColor;
-			border-radius: 12rpx;
-			font-weight: 500;
-		}
-		.txt{
-			margin-bottom: 20rpx;
-			&:last-child{
-				margin-bottom: 0;
+		.lf{
+			width:184rpx;
+			color:#fff;
+			padding-top: 35rpx;
+			.money{
+				font-size: 40rpx;
+				margin-bottom: 40rpx;
 			}
-			.left{
+			.tip{
+				text-align: center;
+				background: rgba(255, 255, 255, 0.2);
+				color:#fff;
+				font-size: 28rpx;
+				width:160rpx;
+				height: 50rpx;
+				line-height: 50rpx;
+				border-radius: 25rpx;
+			}
+		}
+		.right{
+			flex:1;
+			padding:30rpx;
+			.conditions{
+				font-size:36rpx;
+				font-weight: bold;
+			}
+			.tip{
+				font-size: 26rpx;
 				color:$gray
 			}
-			&.txt1{
-				.right{
-					color: $greenColor;
-					font-size: 36rpx;
-				}
-			}
-			&.txt2{
-				padding-bottom:30rpx;
-				.left{
-					color:$maiBlack;
-					font-size:30rpx;
-				}
+			.btn{
+				text-align: center;
+				color:#fff;
+				font-size: 28rpx;
+				width:160rpx;
+				height: 56rpx;
+				line-height: 56rpx;
+				background:$greenColor;
+				border-radius: 28rpx;
+				font-weight: 500;
 			}
 		}
+		
 	
 	}
 	

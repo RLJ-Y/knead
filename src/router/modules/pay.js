@@ -10,6 +10,11 @@ const pay = [
        path:'/record',
        name:'record',
        component:() => import('@/pages/pay/record.vue'),
+   },
+   {
+       path:'/refund',
+       name:'refund',
+       component:() => import('@/pages/pay/refund.vue'),
    }
 ]
 export default pay
