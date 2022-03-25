@@ -1,6 +1,6 @@
 <template>
 	<view class='main'>
-		<view class="address row-between">
+		<view class="boxOuter address row-between">
 			<image src='@/static/images/pay/ic-dwei.png' class='icon'></image>
 			<view class='center'>
 				<view class='mgb15'>
@@ -13,8 +13,15 @@
 			</view>
 			<u-icon name="arrow-right" color="#919191 " size="38"></u-icon>
 		</view>
-		<view class="main"></view>
-		<view class="payType"></view>
+		<view class="main boxOuter"></view>
+		<view class="payType boxOuter">
+			<view class="row borderbottom row-start">
+				<image src="@/static/images/my/location.png" class="icon"></image>
+				<text class="tit">服务地址</text>
+
+				<u-icon name="arrow-right" color="#111111" size="14"></u-icon>
+			</view>
+		</view>
 		<!-- 底部 -->
 		<view class="footer row-between">
 			<view class="price-content">
@@ -37,12 +44,7 @@ export default {};
 .main{
 	padding:20rpx 20rpx  124rpx;
 	.address{
-		width: 710rpx;
-		background: #FFFFFF;
-		box-shadow: 0px 0px 8rpx 0px rgba(218, 218, 218, 0.5);
-		border-radius: 12rpx;
-		margin-bottom: 20rpx;
-		padding:20rpx;
+		
 		.icon{
 			width: 58rpx;
 			height:58rpx;
@@ -73,12 +75,26 @@ export default {};
 		padding:0 20rpx;
 	}
 	.payType{
-		width: 710rpx;
-		background: #FFFFFF;
-		box-shadow: 0px 0px 8rpx 0px rgba(218, 218, 218, 0.5);
-		border-radius: 12rpx;
-		margin-bottom: 60rpx;
-		padding:0 20rpx;
+		.row {
+			display: flex;
+			align-items: center;
+			position: relative;
+			padding: 30rpx 0;
+			background: #fff;
+			font-size: 28rpx;
+			.icon {
+				width: 32rpx;
+				height: 32rpx;
+				margin-right: 10rpx;
+			}
+			.tit {
+				width: 140rpx;
+			}
+			.input {
+				flex: 1;
+				font-size: 28rpx;
+			}
+		}
 	}
 	.footer {
 		position: fixed;

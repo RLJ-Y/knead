@@ -18,7 +18,8 @@
 		{
 			"path": "pages/therapist/index",
 			"style": {
-				"navigationBarTitleText": "理疗师"
+				"navigationBarTitleText": "理疗师",
+				"enablePullDownRefresh": true
 			}
 		},
 		{
