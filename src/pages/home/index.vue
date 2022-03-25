@@ -1,54 +1,41 @@
 <template>
 	<view class="main">
-		<swiper class="swiper" :indicator-dots="indicatorDots">
-			<swiper-item v-for="(item, index) in imgArr" :key="index"><image :src="item" class="img"></image></swiper-item>
+		<swiper class="swiper" :indicator-dots="true">
+			<swiper-item v-for="(item, index) in imgList" :key="index"><image :src="item" class="img"></image></swiper-item>
 		</swiper>
 		<view class="row-between nav">
-			<view v-for="(item, index) in textArr" :key="index" class="item" :class="index === currentIndex ? 'active' : ''">{{ item }}</view>
+			<view v-for="(item, index) in navList" :key="index" class="item" :class="index === currentIndex ? 'active' : ''">{{ item }}</view>
 		</view>
 		<view class="list">
-			<Item />
-			<Item />
-			<Item />
-			<Item />
-			<Item />
-			<Item />
+			<Item v-for="(item, index) in navList"/>
 		</view>
-
-		<tabbar/>
-
 	</view>
 </template>
 
 <script>
-import Item from './item/index.vue';
+// ok
+import Item from './components/item.vue';
 export default {
 	data() {
 		return {
-			imgArr: [
+			imgList: [
 				'https://n1image.hjfile.cn/qa/2019/11/05/7eaeadc1b215104f4c7ff549bc827f7c.jpg',
 				'https://n1image.hjfile.cn/qa/2019/11/05/7eaeadc1b215104f4c7ff549bc827f7c.jpg',
 				'https://n1image.hjfile.cn/qa/2019/11/05/7eaeadc1b215104f4c7ff549bc827f7c.jpg'
 			],
-			indicatorDots: true,
-			textArr: ['综合排序', '价格', '销量', '好评度'],
+			navList: ['综合排序', '价格', '销量', '好评度'],
 			currentIndex: 0,
-			keyword: '',
 		};
 	},
 	components: {
 		Item
-	},
-	methods: {
 	}
 };
 </script>
 
 <style lang="scss" scoped>
-@import '../../static/scss/index.scss';
+@import '@/static/scss/index.scss';
 .main{
-	padding-bottom: 120rpx;
-	font-size: 30rpx;
 	.swiper {
 		width: 100%;
 		height: 350rpx;
@@ -71,10 +58,5 @@ export default {
 			}
 		}
 	}
-	.icon{
-		width:40rpx;
-		height:40rpx;
-	}
 }
-
 </style>

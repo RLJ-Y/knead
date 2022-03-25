@@ -1,9 +1,13 @@
 
-// router/modules/home.js
+// router/modules/therapist.js
+// ok
 const therapist = [
    {
-       path:'/therapist',
+       path:'/pages/therapist/index',
        name:'therapist',
+	   meta:{
+	   	 hasTab: 1,
+	   },
        component:() => import('@/pages/therapist/index.vue'),
    },
 ]

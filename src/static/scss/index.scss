@@ -4,8 +4,18 @@ $black: #333333;
 $greenColor: #67be41;
 $gray: #919191;
 $orange: #ff7800;
+$border:#F0F0F0;
+
+// 颜色
+.green{
+	color:$greenColor
+}
+.orange{
+	color:$orange
+}
 view,
-text {
+text,scroll-view ,button,
+input{
 	box-sizing: border-box;
 }
 button,
@@ -25,8 +35,8 @@ input {
 .opacity {
 	opacity: 0.8;
 }
-// 排版
 
+// 排版
 .row-center {
 	display: flex;
 	flex-direction: row;
@@ -68,6 +78,18 @@ input {
 	display: flex;
 	flex-direction: column;
 }
+.column-center-b {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+.wrap{
+	flex-wrap: wrap;
+}
+
+
 // 省略号
 .textElis {
 	width: 100%;
@@ -101,6 +123,9 @@ input {
 .mgb10 {
 	margin-bottom: 10rpx;
 }
+.mgb15{
+	margin-bottom: 15rpx;
+}
 .mgb20 {
 	margin-bottom: 20rpx;
 }
@@ -127,6 +152,16 @@ input {
 .bordertop {
 	border-top: 1px solid #2a2a2a;
 }
+
+
+// 字体大小
+.font32 {
+	font-size: 32rpx;
+}
+.weight{
+	font-weight: bold;
+}
+
 // 按钮
 .greenbtn {
 	width: 164rpx;
@@ -138,11 +173,6 @@ input {
 	color: #fff;
 	font-size: 28rpx;
 }
-// 字体大小
-.font32 {
-	font-size: 32rpx;
-}
-
 .main-btn {
 	width: 710rpx;
 	height: 100rpx;
@@ -153,7 +183,4 @@ input {
 	border-radius: 12rpx;
 	font-size: 36rpx;
 	font-weight: bold;
-}
-.wrap{
-	flex-wrap: wrap;
 }

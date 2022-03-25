@@ -3,10 +3,10 @@
 		<view class='money'>
 			<view class='row-between mgb30'>
 				<view class='lf row-start'>
-					<image src='../../static/images/pay/qianbao.png'></image>
+					<image src='@/static/images/pay/qianbao.png'></image>
 					<text>当前余额</text>
 				</view>
-				<view class='btn'>申请退款</view>
+				<view class='btn' @click='toRefund'>申请退款</view>
 			</view>
 			<view class='num'>
 				<text class='txt1'>￥</text>
@@ -14,37 +14,17 @@
 			</view>
 		</view>
 		<view class='record row-between'>
-			<view class='item'>充值记录</view>
+			<view class='item' @click='toRecord'>充值记录</view>
 			<view class='item'>消费明细</view>
 			<view class='item'>退款记录</view>
 		</view>
 		<view class='pay'>
 			<view class='title'>优惠充值</view>
 			<view class='row-start wrap'>
-				<view class='item column-center active'>
+				<view class='item column-center active' v-for='item in 7'>
 					<view class='txt1 row-start'>￥<text>3000</text></view>
 					<view class='txt2'>送<text>200</text>元</view>
-					<image src='../../static/images/pay/check.png'></image>
-				</view>
-				<view class='item column-center'>
-					<view class='txt1 row-start'>￥<text>3000</text></view>
-					<view class='txt2'>送<text>200</text>元</view>
-				</view>
-				<view class='item column-center'>
-					<view class='txt1 row-start'>￥<text>10000</text></view>
-					<view class='txt2'>送<text>2000</text>元</view>
-				</view>
-				<view class='item column-center'>
-					<view class='txt1 row-start'>￥<text>3000</text></view>
-					<view class='txt2'>送<text>200</text>元</view>
-				</view>
-				<view class='item column-center'>
-					<view class='txt1 row-start'>￥<text>3000</text></view>
-					<view class='txt2'>送<text>200</text>元</view>
-				</view>
-				<view class='item column-center'>
-					<view class='txt1 row-start'>￥<text>3000</text></view>
-					<view class='txt2'>送<text>200</text>元</view>
+					<image src='@/static/images/pay/check.png'></image>
 				</view>
 			</view>
 			<input class="main-btn input-btn" type="number" placeholder="自定义充值金额" placeholder-class="placeholder" />
@@ -56,16 +36,22 @@
 </template>
 
 <script>
+	// ok
 export default {
-
+	methods:{
+		toRefund(){
+			this.$router.push('refund');
+		},
+		toRecord(){
+			this.$router.push('record');
+		}
+	}
 };
 </script>
 
 <style lang="scss" scoped>
-@import '../../static/scss/index.scss';
+@import '@/static/scss/index.scss';
 .main{
-	font-size:30rpx;
-	color: $maiBlack;
 	.money{
 		width:750rpx;
 		height:320rpx;
@@ -133,7 +119,7 @@ export default {
 			height: 152rpx;
 			border-radius: 20rpx;
 			border: 3rpx solid #E6E6E6;
-			margin-right:20rpx;
+			margin-right:22rpx;
 			position: relative;
 			&.active{
 				border-color:$greenColor;

@@ -1,123 +1,111 @@
 <template>
-	<view>
-
-		<!-- <input class="desc" type="text" v-model="desc" placeholder="请填写备注信息" placeholder-class="placeholder" /> -->
-		<!-- 底部 -->
-		<view class="footer">
-			<view class="price-content">
-				<text>实付款</text>
-				<text class="price-tip">￥</text>
-				<text class="price">475</text>
+	<view class='main'>
+		<view class="address row-between">
+			<image src='@/static/images/pay/ic-dwei.png' class='icon'></image>
+			<view class='center'>
+				<view class='mgb15'>
+					<text class='name'>张五权</text>
+					<text class='mobile'>15767887762</text>
+				</view>
+				<view class='add'>
+					浙江省杭州市临平区南苑街道丁兰南路绿城 家园二期3幢2单元1801室
+				</view>
 			</view>
-			<text class="submit" @click="submit">提交订单</text>
+			<u-icon name="arrow-right" color="#919191 " size="38"></u-icon>
 		</view>
-		
-		
-
+		<view class="main"></view>
+		<view class="payType"></view>
+		<!-- 底部 -->
+		<view class="footer row-between">
+			<view class="price-content">
+				<text class='txt1'>合计：</text>
+				<text class="price orange ">￥</text>
+				<text class="price orange weight">475</text>
+			</view>
+			<text class="submit" >提交订单</text>
+		</view>
 	</view>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				maskState: 0, //优惠券面板显示状态
-				desc: '', //备注
-				payType: 1, //1微信 2支付宝
-				couponList: [
-					{
-						title: '新用户专享优惠券',
-						price: 5,
-					},
-					{
-						title: '庆五一发一波优惠券',
-						price: 10,
-					},
-					{
-						title: '优惠券优惠券优惠券优惠券',
-						price: 15,
-					}
-				],
-				addressData: {
-					name: '许小星',
-					mobile: '13853989563',
-					addressName: '金九大道',
-					address: '山东省济南市历城区',
-					area: '149号',
-					default: false,
-				}
-			}
-		},
-		onLoad(option){
-			//商品数据
-			//let data = JSON.parse(option.data);
-			//console.log(data);
-		},
-		methods: {
-			//显示优惠券面板
-			toggleMask(type){
-				let timer = type === 'show' ? 10 : 300;
-				let	state = type === 'show' ? 1 : 0;
-				this.maskState = 2;
-				setTimeout(()=>{
-					this.maskState = state;
-				}, timer)
-			},
-			numberChange(data) {
-				this.number = data.number;
-			},
-			changePayType(type){
-				this.payType = type;
-			},
-			submit(){
-				uni.redirectTo({
-					url: '/pages/money/pay'
-				})
-			},
-			stopPrevent(){}
-		}
-	}
+//ok
+export default {};
 </script>
 
-<style lang="scss">
-
-	.footer{
+<style lang="scss" scoped>
+@import '@/static/scss/index.scss';
+.main{
+	padding:20rpx 20rpx  124rpx;
+	.address{
+		width: 710rpx;
+		background: #FFFFFF;
+		box-shadow: 0px 0px 8rpx 0px rgba(218, 218, 218, 0.5);
+		border-radius: 12rpx;
+		margin-bottom: 20rpx;
+		padding:20rpx;
+		.icon{
+			width: 58rpx;
+			height:58rpx;
+		}
+		.center{
+			flex:1;
+			margin-left: 20rpx;
+			margin-right:70rpx;
+			.name{
+				font-size:32rpx;
+				margin-right: 16rpx;
+			}
+			.mobile{
+				font-size:28rpx;
+				color:#333
+			}
+			.add{
+				font-size:26rpx
+			}
+		}
+	}
+	.main{
+		width: 710rpx;
+		background: #FFFFFF;
+		box-shadow: 0px 0px 8rpx 0px rgba(218, 218, 218, 0.5);
+		border-radius: 12rpx;
+		margin-bottom: 60rpx;
+		padding:0 20rpx;
+	}
+	.payType{
+		width: 710rpx;
+		background: #FFFFFF;
+		box-shadow: 0px 0px 8rpx 0px rgba(218, 218, 218, 0.5);
+		border-radius: 12rpx;
+		margin-bottom: 60rpx;
+		padding:0 20rpx;
+	}
+	.footer {
 		position: fixed;
 		left: 0;
 		bottom: 0;
-		z-index: 995;
-		display: flex;
-		align-items: center;
 		width: 100%;
-		height: 90upx;
-		justify-content: space-between;
-		font-size: 30upx;
 		background-color: #fff;
-		z-index: 998;
-		color: $font-color-base;
-		box-shadow: 0 -1px 5px rgba(0,0,0,.1);
-		.price-content{
-			padding-left: 30upx;
+		padding:12rpx 20rpx;
+		height:104rpx;
+		.txt1 {
+			font-size: 28rpx;
 		}
-		.price-tip{
-			color: $base-color;
-			margin-left: 8upx;
+		.price {
+			font-size: 40rpx;	
 		}
-		.price{
-			font-size: 36upx;
-			color: $base-color;
-		}
-		.submit{
-			display:flex;
-			align-items:center;
-			justify-content: center;
-			width: 280upx;
-			height: 100%;
+		.submit {
+			width: 240rpx;
+			height: 80rpx;
+			line-height:  80rpx;
+			background: $greenColor;
+			border-radius: 12rpx;
+			text-align: center;
 			color: #fff;
-			font-size: 32upx;
-			background-color: $base-color;
+			font-size: 36rpx;
+			font-weight: bold;
 		}
 	}
-	
+}
 
 </style>

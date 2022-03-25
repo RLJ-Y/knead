@@ -1,5 +1,5 @@
 <template>
-	<view class="content row-between mgb20">
+	<view class="item row-between mgb20">
 		<view class="left column-center">
 			<view class="imgbox"><image src="https://dongjiaodaojia.oss-cn-chengdu.aliyuncs.com//uploads/20211230/7f5c22d055822ee8fdabca116f354cbf.png"></image></view>
 			<view class="btn">可服务</view>
@@ -15,30 +15,46 @@
 				<text>已服务：830单</text>
 			</view>
 			<view class="txt3 row-start">
-				<image src="../../static/images/therapist/ic-ShopOutlined.png" class="icon" />
+				<image src="@/static/images/therapist/ic-ShopOutlined.png" class="icon" />
 				商家
-				<image src="../../static/images/therapist/ic-daipj.png" class="icon mgl20" />
-				3212
-				<image class="icon2 mgl20" src="../../static/images/therapist/ai-xin.png" />
+				<view class='row-start' @click='openRate'>
+					<image src="@/static/images/therapist/ic-daipj.png" class="icon mgl20" />
+					3212
+				</view>
+				<image class="icon2 mgl20" src="@/static/images/therapist/ai-xin.png" />
 				3730
 			</view>
 		</view>
-		<view class="right">
+		<view class="right column-center-b">
 			<view class="txt1">最早可约：17:30</view>
-			<view class="txt2 row-start">
-				<u-icon name="map-fill" color="#67BE41" size="16"></u-icon>
+			<view class="txt2 ">
+				<u-icon name="map-fill" color="#67BE41" size="26"></u-icon>
 				1.77km
 			</view>
-			<view class="greenbtn">立即预约</view>
+			<view class="greenbtn"  @click='openAppoint'>立即预约</view>
 		</view>
 	</view>
 </template>
 
-<script></script>
+<script>
+	// ok
+	export default {
+		methods:{
+			// 打开评论
+			openRate(){
+				this.$bus.$emit('openRate')
+			},
+			openAppoint(){
+				this.$bus.$emit('openAppoint')
+			}
+		}
+	};
+
+</script>
 
 <style lang="scss" scoped>
-@import '../../static/scss/index.scss';
-.content {
+@import '@/static/scss/index.scss';
+.item {
 	width: 710rpx;
 	height: 190rpx;
 	padding: 25rpx 20rpx;
@@ -50,16 +66,16 @@
 		width: 110rpx;
 		margin-left: 20rpx;
 		.imgbox {
-			width: 100rpx;
-			height: 100rpx;
-			border: 4rpx solid $gray;
+			width: 104rpx;
+			height: 104rpx;
+			border: 4rpx solid #E3E3E3 ;
 			border-radius: 100%;
 			image {
 				width: 100%;
 				height: 100%;
 				border-radius: 100%;
 			}
-			margin-bottom: 8rpx;
+			margin-bottom: 10rpx;
 		}
 		.btn {
 			width: 110rpx;
@@ -114,6 +130,7 @@
 		}
 	}
 	.right {
+		
 		.txt1 {
 			color: $greenColor;
 			font-size: 20rpx;

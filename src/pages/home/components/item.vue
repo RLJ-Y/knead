@@ -1,5 +1,5 @@
 <template>
-	<view class='content row-between mgb20'>
+	<view class='item row-between'>
 		<view class='imgbox'><image src='https://dongjiaodaojia.oss-cn-chengdu.aliyuncs.com//uploads/20211230/7f5c22d055822ee8fdabca116f354cbf.png'></image></view>
 		<view class='right'>
 			<view class='top row-between'>
@@ -20,15 +20,17 @@
 </template>
 
 <script>
+	// ok
 </script>
 
 <style lang="scss" scoped>
-@import '../../../static/scss/index.scss';
-.content{
+@import '@/static/scss/index.scss';
+.item{
 	width:100%;
 	height:190rpx;
 	padding:20rpx;
 	background:#fff;
+	margin-bottom: 20rpx;
 	.imgbox{
 		width:200rpx;
 		height:150rpx;
@@ -86,9 +88,7 @@
 					margin-right: 5rpx;
 				}
 			}
-			
 		}
-		
 	}
 }
 </style>

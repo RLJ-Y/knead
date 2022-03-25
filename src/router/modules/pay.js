@@ -1,20 +1,21 @@
 
-// router/modules/home.js
+// router/modules/pay.js
+//ok
 const pay = [
    {
-       path:'/pay',
+       path:'/pages/pay/index',
        name:'pay',
-       component:() => import('@/pages/pay/index.vue'),
+       component:() => import('@/pages/pay/index'),
    },
    {
-       path:'/record',
+       path:'/pages/pay/record',
        name:'record',
-       component:() => import('@/pages/pay/record.vue'),
+       component:() => import('@/pages/pay/record'),
    },
    {
-       path:'/refund',
+       path:'/pages/pay/refund',
        name:'refund',
-       component:() => import('@/pages/pay/refund.vue'),
+       component:() => import('@/pages/pay/refund'),
    }
 ]
 export default pay

@@ -1,19 +1,24 @@
 // router/modules/home.js
+// ok
 const home = [
-    {
-        //注意：path必须跟pages.json中的地址对应，最前面别忘了加'/'哦
-        path: '/',
-        aliasPath:'/',  //对于h5端你必须在首页加上aliasPath并设置为/
-        component: () => import('@/pages/index/index.vue'),
-        name: 'index',
-		redirect:'/home',
-        children:[
-            {
-                path:'/home',
-                name:'home',
-                component:() => import('@/pages/home/index.vue'),
-            }
-        ]
-    }
+	{
+	    path: '/',
+	    redirect:'/pages/home/index',
+	},
+	{
+	    path: '/pages/home/index',
+	    name:'home',
+		aliasPath:'/',  //对于h5端你必须在首页加上aliasPath并设置为/
+		meta:{
+			 hasTab: 1,
+		},
+	    component:() => import('@/pages/home/index.vue'),
+	},
+	{
+	    path: '/pages/home/login',
+	    name:'login',
+	    component:() => import('@/pages/home/login.vue'),
+	},
+	
 ]
 export default home

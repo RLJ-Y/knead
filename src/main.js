@@ -16,6 +16,9 @@ App.mpType = 'app'
 Vue.use(uView);
 const app = new Vue({
   ...App,
-  router
+  router,
+  beforeCreate() {
+  	Vue.prototype.$bus = this
+  }
 })
 app.$mount()

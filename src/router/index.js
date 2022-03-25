@@ -17,14 +17,14 @@ const router = new Router({
 
 //全局路由前置守卫
 router.beforeEach((to, from, next) => {
-    console.log("前置守卫")
-	console.log(from)
-    console.log(to)
+ //    console.log("前置守卫")
+	// console.log(from)
+ //    console.log(to)
     next()
 })
 // 全局路由后置守卫
 router.afterEach((to, from) => {
-    console.log("后置守卫")
-    console.log(from)
+    // console.log("后置守卫")
+    // console.log(from)
 })
 export default router;

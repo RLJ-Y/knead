@@ -1,26 +1,18 @@
-// router/modules/home.js
+// router/modules/my.js
+//ok
 const my = [
    {
-       path:'/my',
+       path:'/pages/my/index',
        name:'my',
-       component:() => import('@/pages/my/index'),
+	   meta:{
+	   	 hasTab: 1,
+	   },
+       component:() => import('@/pages/my/index.vue'),
    },
    {
-       path:'/address',
-       name:'address',
-       component:() => import('@/pages/my/address'),
-   },
-   {
-       path:'/addSite',
-       name:'addSite',
-       component:() => import('@/pages/my/address/addSite'),
-   },
-   {
-       path:'/vouchers',
+       path:'/pages/my/vouchers',
        name:'vouchers',
-       component:() => import('@/pages/my/vouchers/index'),
-   },
-   
-   
+       component:() => import('@/pages/my/vouchers.vue'),
+   }  
 ]
 export default my

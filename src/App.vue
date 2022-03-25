@@ -1,8 +1,14 @@
 <template>
-	<router-view></router-view>
+	<view class='outerBox'>
+		<keep-alive>
+			<router-view></router-view>
+		</keep-alive>
+		<tabbar v-if='$route.meta.hasTab'/>
+	</view>
 </template>
 <script>
 export default {
+
 	onLaunch: function() {
 		console.log('App Launch');
 	},
@@ -18,12 +24,11 @@ export default {
 <style lang="scss">
 @import "uview-ui/index.scss";
 @import './static/scss/index.scss';
-
-
 /*每个页面公共css */
-page {
+.outerBox {
 	background: $backColor;
 	font-size: 30rpx;
 	color: $maiBlack;
+	height:100%
 }
 </style>
