@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import Calculator from '@/components/calculator/index.vue'
 export default {
 	data() {
 		return {

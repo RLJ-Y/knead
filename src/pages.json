@@ -46,6 +46,7 @@
 				"navigationBarTitleText": "订单支付"
 			}
 		},
+		{			"path": "pages/order/orderDetail",			"style": {				"navigationBarTitleText": "订单详情页"			}		},
 		{
 			"path": "pages/my/index",
 			"style": {
@@ -56,6 +57,12 @@
 			"path": "pages/my/vouchers",
 			"style": {
 				"navigationBarTitleText": "优惠券"
+			}
+		},
+		{
+			"path": "pages/my/appoint",
+			"style": {
+				"navigationBarTitleText": "技师招募"
 			}
 		},
 		{

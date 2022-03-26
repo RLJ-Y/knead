@@ -1,5 +1,5 @@
 <template>
-	<view class="order-item">
+	<view class="order-item" @click='toDetail'>
 		<view class="row-between txt txt1">
 			<text class="left">2022-03-13 10:23:20</text>
 			<text class="right">已完成</text>
@@ -24,7 +24,7 @@
 			<text class="left">订单总额</text>
 			<text class="right">￥198</text>
 		</view>
-		<view class="row-end"><view class="btn" @click="toRate">去评价</view><view class="btn" @click="toCancel">取消订单</view></view>
+		<view class="row-end"><view class="btn" @click.stop="toRate">去评价</view><view class="btn" @click.stop="toCancel">取消订单</view></view>
 	</view>
 </template>
 
@@ -37,6 +37,9 @@ export default {
 		},
 		toCancel(){
 			this.$router.push('cancelOrder');
+		},
+		toDetail(){
+			this.$router.push('orderDetail');
 		}
 	}
 }

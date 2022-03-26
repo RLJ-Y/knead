@@ -23,6 +23,11 @@ const order = [
    	   path:'/pages/order/rating',
    	   name:'rating',
    	   component:() => import('@/pages/order/rating.vue'),
+   },
+   {
+   	   path:'/pages/order/orderDetail',
+   	   name:'orderDetail',
+   	   component:() => import('@/pages/order/orderDetail.vue'),
    }
 ]
 export default order

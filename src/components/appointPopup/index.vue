@@ -58,6 +58,7 @@
 <script>
 // ok
 import Item from './item.vue';
+
 export default {
 	
 	data() {
