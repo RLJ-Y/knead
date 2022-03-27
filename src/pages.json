@@ -16,6 +16,13 @@
 			}
 		},
 		{
+			"path": "pages/home/detail",
+			"style": {
+				"navigationBarTitleText": "项目详情"
+			}
+		},
+		
+		{
 			"path": "pages/therapist/index",
 			"style": {
 				"navigationBarTitleText": "理疗师",
@@ -62,7 +69,8 @@
 		{
 			"path": "pages/my/appoint",
 			"style": {
-				"navigationBarTitleText": "技师招募"
+				"navigationBarTitleText": "技师招募",
+				"enablePullDownRefresh": true
 			}
 		},
 		{

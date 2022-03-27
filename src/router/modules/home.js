@@ -19,6 +19,10 @@ const home = [
 	    name:'login',
 	    component:() => import('@/pages/home/login.vue'),
 	},
-	
+	{
+	    path: '/pages/home/detail',
+	    name:'detail',
+	    component:() => import('@/pages/home/detail.vue'),
+	},
 ]
 export default home

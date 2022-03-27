@@ -119,7 +119,7 @@ export default {
 			height: 152rpx;
 			border-radius: 20rpx;
 			border: 3rpx solid #E6E6E6;
-			margin-right:22rpx;
+			margin-right:20rpx;
 			position: relative;
 			&.active{
 				border-color:$greenColor;
