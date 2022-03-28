@@ -2,11 +2,6 @@
 // ok
 const home = [
 	{
-	    path: '/',
-		component:() => import('@/pages/index/index.vue'),
-	    redirect:'/pages/home/index',
-	},
-	{
 	    path: '/pages/home/index',
 	    name:'home',
 		aliasPath:'/',  //对于h5端你必须在首页加上aliasPath并设置为/

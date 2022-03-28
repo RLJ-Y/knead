@@ -1,5 +1,5 @@
 <template>
-	<view class='item row-between'>
+	<view class='item row-between' @click='toDetail'>
 		<view class='imgbox'><image src='https://dongjiaodaojia.oss-cn-chengdu.aliyuncs.com//uploads/20211230/7f5c22d055822ee8fdabca116f354cbf.png'></image></view>
 		<view class='right'>
 			<view class='top row-between'>
@@ -21,6 +21,13 @@
 
 <script>
 	// ok
+	export default {
+		methods:{
+			toDetail(){
+				this.$jump('/pages/home/detail')
+			}
+		}
+	}
 </script>
 
 <style lang="scss" scoped>

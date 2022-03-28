@@ -12,7 +12,6 @@ export default {
 					iconPath: '/static/images/tabbar/icon1.png',
 					selectedIconPath: '/static/images/tabbar/aicon1.png',
 					text: '首页',
-					customIcon: false
 				},
 				{
 					iconPath: '/static/images/tabbar/icon2.png',

@@ -25,10 +25,9 @@ export default {
 @import "uview-ui/index.scss";
 @import './static/scss/index.scss';
 /*每个页面公共css */
-.outerBox {
+page {
 	background: $backColor;
 	font-size: 30rpx;
 	color: $maiBlack;
-	height:100%
 }
 </style>
