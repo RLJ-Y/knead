@@ -6,14 +6,14 @@
 		<view class="row-between nav">
 			<view v-for="(item, index) in navList" :key="index" class="item" :class="index === currentIndex ? 'active' : ''">{{ item }}</view>
 		</view>
-		<view class="list"><Item v-for="(item, index) in navList" /></view>		
+		<view class="list"><Item v-for="(item, index) in navList" /></view>
 	</view>
 </template>
 
 <script>
 // ok
 import Item from './components/item.vue';
-import {mapState} from 'vuex'
+import { mapState } from 'vuex';
 export default {
 	data() {
 		return {
@@ -29,27 +29,43 @@ export default {
 	components: {
 		Item
 	},
-	computed:{
+	computed: {
 		...mapState('user', ['demo'])
 	},
 	onLoad() {
-		console.log('你好')
+		console.log('你好');
 		uni.getLocation({
 			type: 'wgs84',
-			success: function (res) {
+			success: function(res) {
+				console.log(res)
 				console.log('当前位置的经度：' + res.longitude);
 				console.log('当前位置的纬度：' + res.latitude);
 			},
-			fail:function(err){
-				console.log(err)
+			fail: function(err) {
+				console.log(err);
+			}
+		});
+		uni.request({
+			url: '/api/api/js/h5_index', //仅为示例，并非真实接口地址。
+			method: 'POST',
+			header: {
+				'Content-Type': 'application/x-www-form-urlencoded'
+			},
+			dataType: 'json',
+			data: {
+				page: 1,
+				status: 0,
+				city_id: 948
+			},
+			success: res => {
+				console.log(res.data);
+				this.text = 'request success';
 			}
 		});
 		// uni.startPullDownRefresh();
 	},
-	
-	onReachBottom() {
 
-	},
+	onReachBottom() {},
 	onPullDownRefresh() {
 		// setTimeout(function() {
 		// 	uni.stopPullDownRefresh();
