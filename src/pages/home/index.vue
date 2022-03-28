@@ -6,9 +6,7 @@
 		<view class="row-between nav">
 			<view v-for="(item, index) in navList" :key="index" class="item" :class="index === currentIndex ? 'active' : ''">{{ item }}</view>
 		</view>
-		<view class="list">
-			<Item v-for="(item, index) in navList"/>
-		</view>
+		<view class="list"><Item v-for="(item, index) in navList" /></view>
 	</view>
 </template>
 
@@ -24,18 +22,32 @@ export default {
 				'https://n1image.hjfile.cn/qa/2019/11/05/7eaeadc1b215104f4c7ff549bc827f7c.jpg'
 			],
 			navList: ['综合排序', '价格', '销量', '好评度'],
-			currentIndex: 0,
+			currentIndex: 0
 		};
 	},
 	components: {
 		Item
+	},
+	onLoad() {
+		console.log('你好啊');
+		
+	},
+	onReachBottom() {
+		uni.startPullDownRefresh();
+		console.log('到了底部');
+	},
+	onPullDownRefresh() {
+		console.log('refresh');
+		setTimeout(function() {
+			uni.stopPullDownRefresh();
+		}, 1000);
 	}
 };
 </script>
 
 <style lang="scss" scoped>
 @import '@/static/scss/index.scss';
-.main{
+.main {
 	.swiper {
 		width: 100%;
 		height: 350rpx;

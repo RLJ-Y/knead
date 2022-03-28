@@ -6,7 +6,8 @@
 		{
 			"path": "pages/home/index",
 			"style": {
-				"navigationBarTitleText": "点点到家"
+				"navigationBarTitleText": "点点到家",
+				"enablePullDownRefresh": true
 			}
 		},
 		{

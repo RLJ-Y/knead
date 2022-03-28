@@ -40,7 +40,7 @@
 					<image src="@/static/images/my/pic-diz.png"></image>
 					<text>地址管理</text>
 				</view>
-				<view class="item column-center">
+				<view class="item column-center" @click='toAppoint'>
 					<image src="@/static/images/my/pic-zhaomu.png"></image>
 					<text>技师招募</text>
 				</view>
@@ -72,6 +72,9 @@
 			},
 			toSetting(){
 				this.$router.push('/pages/setting/index');
+			},
+			toAppoint(){
+				this.$router.push('appoint');
 			}
 		}
 	}
