@@ -7,6 +7,7 @@
 			<view v-for="(item, index) in navList" :key="index" class="item" :class="index === currentIndex ? 'active' : ''">{{ item }}</view>
 		</view>
 		<view class="list"><Item v-for="(item, index) in navList" /></view>
+
 	</view>
 </template>
 
@@ -29,6 +30,12 @@ export default {
 		Item
 	},
 	onLoad() {
+		setTimeout(()=>{
+			uni.showToast({
+			title: '提交成功',
+			duration: 2000
+			});
+		},3000)
 		console.log('你好啊');
 		
 	},
