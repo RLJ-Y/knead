@@ -7,7 +7,7 @@ import Technician from './components/technician/index.vue'
 
 Vue.component('Tabbar',Tabbar)
 Vue.component('Technician',Technician)
-Vue.config.productionTip = false
+
 // 如此配置即可
 // uni.$u.config.unit = 'rpx'
 Vue.config.productionTip = false

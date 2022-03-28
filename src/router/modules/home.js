@@ -3,6 +3,7 @@
 const home = [
 	{
 	    path: '/',
+		component:() => import('@/pages/index/index.vue'),
 	    redirect:'/pages/home/index',
 	},
 	{

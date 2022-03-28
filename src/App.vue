@@ -1,11 +1,11 @@
-<template>
+<!-- <template>
 	<view class='outerBox'>
 		<keep-alive>
 			<router-view></router-view>
 		</keep-alive>
 		<tabbar v-if='$route.meta.hasTab'/>
 	</view>
-</template>
+</template> -->
 <script>
 export default {
 

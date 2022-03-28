@@ -7,7 +7,7 @@
 			<view v-for="(item, index) in navList" :key="index" class="item" :class="index === currentIndex ? 'active' : ''">{{ item }}</view>
 		</view>
 		<view class="list"><Item v-for="(item, index) in navList" /></view>
-
+			<tabbar />
 	</view>
 </template>
 
@@ -30,24 +30,22 @@ export default {
 		Item
 	},
 	onLoad() {
-		setTimeout(()=>{
-			uni.showToast({
-			title: '提交成功',
-			duration: 2000
-			});
-		},3000)
-		console.log('你好啊');
-		
-	},
-	onReachBottom() {
+		// uni.showToast({
+		// 	title: '提交成功',
+		// 	duration: 2000
+		// });
 		uni.startPullDownRefresh();
+	},
+	
+	onReachBottom() {
+		
 		console.log('到了底部');
 	},
 	onPullDownRefresh() {
 		console.log('refresh');
 		setTimeout(function() {
 			uni.stopPullDownRefresh();
-		}, 1000);
+		}, 4000);
 	}
 };
 </script>
