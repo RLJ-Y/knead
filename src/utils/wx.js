@@ -1,4 +1,4 @@
-import loginModule from '../api/modules/login'
+var jweixin = require('jweixin-module')
 export function isLogin() {
 	//是否登录 /api/user/is_login
 	return !!localStorage.getItem('isLogin')
@@ -12,3 +12,21 @@ export function jumpWx(
 	)}&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect`
 	location.href = url
 }
+
+export function initJssdk() {
+	jweixin.config({
+		debug: false,
+		appId: res.appId,
+		timestamp: res.timestamp,
+		nonceStr: res.nonceStr,
+		signature: res.signature,
+		jsApiList: ['checkJsApi'],
+	})
+}
+
+export function hideMenuItems() {
+	// jweixin.ready({})
+	jweixin.hideAllNonBaseMenuItem()
+}
+
+export default { hideMenuItems }

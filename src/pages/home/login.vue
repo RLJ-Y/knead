@@ -34,13 +34,16 @@
     },
     onLoad(options) {
       let { code } = options;
-      if (code && !isLogin()) {
-        let data = loginModule.login(code)
-        if (data) {
-          localStorage.setItem('isLogin', 1)
-          //跳转到新的页面
 
-        }
+      if (code && !isLogin()) {
+        loginModule.login(code).then(res => {
+          console.log(res, /d/)
+          if (res) {
+            localStorage.setItem('isLogin', 1)
+            //跳转到新的页面
+            location.href = '/'
+          }
+        })
       }
     },
   };
