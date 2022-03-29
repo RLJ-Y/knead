@@ -6,14 +6,14 @@
 		<view class="row-between nav">
 			<view v-for="(item, index) in navList" :key="index" class="item" :class="index === currentIndex ? 'active' : ''">{{ item }}</view>
 		</view>
-		<view class="list"><Item v-for="(item, index) in navList" /></view>		
+		<view class="list"><Item v-for="(item, index) in navList" /></view>
 	</view>
 </template>
 
 <script>
 // ok
 import Item from './components/item.vue';
-import {mapState} from 'vuex'
+import { mapState } from 'vuex';
 export default {
 	data() {
 		return {
@@ -29,31 +29,23 @@ export default {
 	components: {
 		Item
 	},
-	computed:{
+	computed: {
 		...mapState('user', ['demo'])
 	},
-	onLoad() {
-		console.log('你好')
-		uni.getLocation({
-			type: 'wgs84',
-			success: function (res) {
-				console.log('当前位置的经度：' + res.longitude);
-				console.log('当前位置的纬度：' + res.latitude);
-			},
-			fail:function(err){
-				console.log(err)
-			}
-		});
-		// uni.startPullDownRefresh();
+	async onLoad() {
+		let res = await this.$API.home.getHomeList()
+		console.log(res)
 	},
-	
-	onReachBottom() {
 
+	onReachBottom() {
+		// 下拉加载更多
 	},
 	onPullDownRefresh() {
-		// setTimeout(function() {
-		// 	uni.stopPullDownRefresh();
-		// }, 4000);
+		// 上拉刷新
+		// uni.startPullDownRefresh();
+		setTimeout(function() {
+			uni.stopPullDownRefresh();
+		}, 4000);
 	}
 };
 </script>

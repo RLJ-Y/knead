@@ -1,23 +1,24 @@
 import Vue from 'vue'
 import App from './App'
 import uView from "uview-ui";
+Vue.use(uView);
+// 如此配置即可
+// uni.$u.config.unit = 'rpx'
  // import router from './router'
- import store from './store'
+import {jump} from 'utils/method.js'
+import API from '@/api' 
+console.log(API)
+// 任意组件可以使用API相关的接口
+Vue.prototype.$API = API
+App.mpType = 'app'
+Vue.prototype.$jump = jump
 import Tabbar from './components/tabbar/index.vue'
 import Technician from './components/technician/index.vue'
-import {jump} from 'utils/method.js'
-
 Vue.component('Tabbar',Tabbar)
 Vue.component('Technician',Technician)
 
-// 如此配置即可
-// uni.$u.config.unit = 'rpx'
+import store from './store'
 Vue.config.productionTip = false
-App.mpType = 'app'
-
-Vue.prototype.$jump = jump
-
-Vue.use(uView);
 const app = new Vue({
   ...App,
   // router,
