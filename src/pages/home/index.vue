@@ -33,43 +33,18 @@ export default {
 		...mapState('user', ['demo'])
 	},
 	onLoad() {
-		console.log('你好');
-		uni.getLocation({
-			type: 'wgs84',
-			success: function(res) {
-				console.log(res)
-				console.log('当前位置的经度：' + res.longitude);
-				console.log('当前位置的纬度：' + res.latitude);
-			},
-			fail: function(err) {
-				console.log(err);
-			}
-		});
-		uni.request({
-			url: '/api/api/js/h5_index', //仅为示例，并非真实接口地址。
-			method: 'POST',
-			header: {
-				'Content-Type': 'application/x-www-form-urlencoded'
-			},
-			dataType: 'json',
-			data: {
-				page: 1,
-				status: 0,
-				city_id: 948
-			},
-			success: res => {
-				console.log(res.data);
-				this.text = 'request success';
-			}
-		});
-		// uni.startPullDownRefresh();
+		this.$API.home.getHomeList()
 	},
 
-	onReachBottom() {},
+	onReachBottom() {
+		// 下拉加载更多
+	},
 	onPullDownRefresh() {
-		// setTimeout(function() {
-		// 	uni.stopPullDownRefresh();
-		// }, 4000);
+		// 上拉刷新
+		// uni.startPullDownRefresh();
+		setTimeout(function() {
+			uni.stopPullDownRefresh();
+		}, 4000);
 	}
 };
 </script>
