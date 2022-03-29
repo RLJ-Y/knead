@@ -32,8 +32,9 @@ export default {
 	computed: {
 		...mapState('user', ['demo'])
 	},
-	onLoad() {
-		this.$API.home.getHomeList()
+	async onLoad() {
+		let res = await this.$API.home.getHomeList()
+		console.log(res)
 	},
 
 	onReachBottom() {
