@@ -14,6 +14,11 @@
 
 <script>
 // ok
+export default{
+	async onLoad(){
+		 await this.$API.login.login()
+	}
+}
 </script>
 
 <style lang="scss" scoped>
