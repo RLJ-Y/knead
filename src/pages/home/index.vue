@@ -52,6 +52,17 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/static/scss/index.scss';
+::v-deep uni-swiper .uni-swiper-dot{
+	background: rgba(255, 255, 255, 0.6);
+	width:10rpx;
+	height:10rpx
+}
+::v-deep uni-swiper .uni-swiper-dot-active{
+	background: #FFFFFF;
+	width:20rpx;
+	height:10rpx;
+	border-radius: 5rpx;
+}
 .main {
 	.swiper {
 		width: 100%;
