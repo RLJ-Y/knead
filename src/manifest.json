@@ -80,6 +80,10 @@
                     "key" : "4U4BZ-VP3KU-W5TVC-BFILJ-JPWYE-GNBX2"
                 }
             }
+        },
+        "router":{
+          "base" : "",
+          "mode":"history"
         }
     }
 }
